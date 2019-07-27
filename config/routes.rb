@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-	root to: 'tasks#index'
+  get 'toppages/index'
+root to: 'toppages#index'
+
+#toppagesにルートを変えるため変更
+#root to: 'tasks#index'
 	
 	resources :tasks
 end
