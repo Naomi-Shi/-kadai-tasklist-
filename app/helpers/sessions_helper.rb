@@ -5,5 +5,10 @@ module SessionsHelper
 	
 	def logged_in?
 		!!current_user
+		#if current_user
+		#	return true
+		#else
+		#	return false
+		#end
 	end
 end

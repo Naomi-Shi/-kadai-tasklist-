@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 		if logged_in?
 			@task = current_user.tasks.build
 			@tasks = current_user.tasks.order(id: :desc).page(params[:page])
-	  end
+		end
 	end
 	
 	def show
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 	
 	def new
 		@task = Task.new
-  end
+	end
   
   def create
   	@task = current_user.tasks.build(task_params)
@@ -63,7 +63,7 @@ class TasksController < ApplicationController
   #findだと空の場合にエラーになってしまう。だから、find_byを使って空の場合でも権限がない場合でも同じ表示となるようにする。
   #findとfind_byの違いももう一度復習
   
-#  def current_user
+#  def correct_user
 #  	@task = current_user.tasks.find_by(id: params[:id])
 #  	unless @task
 #  	  redirect_to tasks_url

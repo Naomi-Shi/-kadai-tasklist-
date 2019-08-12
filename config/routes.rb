@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create]
-	
-	resources :tasks
-#tasksのindexとusersのindexの関係
+  resources :users, only: [:show, :new, :create]
+#8/10 users index,showを削除	
+	# resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
+	resources :tasks, except: [:index]
 end
